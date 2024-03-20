@@ -10,7 +10,6 @@ def main():
     for i in file:
         list_product = []
         for j in i["products"]:
-
             product = Product(j["name"], j["description"], j["price"], j["quantity"])
             list_product.append(product)  # список классов Product
         category = Category(i['name'], i['description'], list_product)
@@ -21,6 +20,7 @@ def main():
         print(f'Название категории: {i.name}')
         print(f'Описание категории: {i.description}')
         print("Товары:")
+        print(len(category))
         # for j in i.products:
         #     print(f'Название товара: {j.name}')
         #     print(f'Описание товара: {j.description}')
@@ -33,6 +33,7 @@ def main():
         print()
     print(f'Общее количество категорий: {i.category_count}')
     print(f'Количество уникальных продуктов: {i.product_count}')
+
 
 
 if __name__ == '__main__':

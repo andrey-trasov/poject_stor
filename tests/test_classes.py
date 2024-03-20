@@ -80,6 +80,9 @@ def test_init_category(category):
 def product():
     return Product(goods[0]["products"][0]["name"], goods[0]["products"][0]["description"], goods[0]["products"][0]["price"], goods[0]["products"][0]["quantity"])
 
+@pytest.fixture()
+def product1():
+    return Product(goods[0]["products"][1]["name"], goods[0]["products"][1]["description"], goods[0]["products"][1]["price"], goods[0]["products"][1]["quantity"])
 
 def test_init_product(product):
     assert product.name == "Samsung Galaxy C23 Ultra"
@@ -96,3 +99,7 @@ def test_class_product(dictionary):
     assert dictionary.description == "256GB, Серый цвет, 200MP камера"
     assert dictionary.price == 180000.0
     assert dictionary.quantity == 5
+
+def test_product(product, product1):
+    assert product + product1 == 2580000.0
+    assert str(product) == 'Samsung Galaxy C23 Ultra, 180000.0 руб. Остаток: 5 шт.'
