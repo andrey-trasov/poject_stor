@@ -1,3 +1,5 @@
+from utils.class_product import Product
+
 class Category:
     category_count = 0
     product_count = 0
@@ -11,7 +13,8 @@ class Category:
 
 
     def add_product(self, product):
-        self.__products.append(product)
+        if isinstance(product, Product):
+            self.__products.append(product)
 
 
     @property
