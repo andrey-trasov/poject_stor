@@ -16,24 +16,24 @@ def main():
         list_category.append(category)  # список классов Category
     # печатаем данные из списка Category
 
-    for i in list_category:
-        print(f'Название категории: {i.name}')
-        print(f'Описание категории: {i.description}')
-        print("Товары:")
-        print(len(category))
-        # for j in i.products:
-        #     print(f'Название товара: {j.name}')
-        #     print(f'Описание товара: {j.description}')
-        #     print(f'Цена товара: {j.price}')
-        #     print(f'Количество в наличии: {j.quantity}')
-        #     print()
+    # for i in list_category:
+    #     print(f'Название категории: {i.name}')
+    #     print(f'Описание категории: {i.description}')
+    #     print("Товары:")
+    #     print(len(category))
+    #     # for j in i.products:
+    #     #     print(f'Название товара: {j.name}')
+    #     #     print(f'Описание товара: {j.description}')
+    #     #     print(f'Цена товара: {j.price}')
+    #     #     print(f'Количество в наличии: {j.quantity}')
+    #     #     print()
+    #
+    #     i.products    # задание 2
 
-        i.products    # задание 2
-
-        print()
-    print(f'Общее количество категорий: {i.category_count}')
-    print(f'Количество уникальных продуктов: {i.product_count}')
-
+    #     print()
+    # print(f'Общее количество категорий: {i.category_count}')
+    # print(f'Количество уникальных продуктов: {i.product_count}')
+    #
 
 
 if __name__ == '__main__':

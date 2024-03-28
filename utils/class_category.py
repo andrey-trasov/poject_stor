@@ -1,15 +1,17 @@
 from utils.class_product import Product
+from utils.mixin import ReprMixin
 
-class Category:
+class Category(ReprMixin):
     category_count = 0
     product_count = 0
 
     def __init__(self, name: str, description: str, products: list = None):
-        self.name = name                              #название
-        self.description = description                #описание
-        self.__products = products                    #список товаров
-        Category.category_count += 1                  #общее количество категорий
+        self.name = name                                #название
+        self.description = description                  #описание
+        self.__products = products                      #список товаров
+        Category.category_count += 1                    #общее количество категорий
         Category.product_count += len(self.__products)  #количество уникальных продуктов
+        super().__repr__()
 
 
     def add_product(self, product):
