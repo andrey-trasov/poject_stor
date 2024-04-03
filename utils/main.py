@@ -34,6 +34,7 @@ def main():
     # print(f'Общее количество категорий: {i.category_count}')
     # print(f'Количество уникальных продуктов: {i.product_count}')
     #
+    #print(list_category[0].average_price_tag())
 
 
 if __name__ == '__main__':

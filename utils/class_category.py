@@ -34,3 +34,16 @@ class Category(ReprMixin):
         for i in self.__products:
             num_products += i.quantity
         return num_products
+
+    def average_price_tag(self):
+        average_price = []
+        for goods in self.__products:
+            try:
+                if goods.quantity == 0:
+                    raise ZeroDivisionError
+                average_price.append(goods.price)
+            except ZeroDivisionError:
+                return 0
+        return sum(average_price) / len(average_price)
+
+
