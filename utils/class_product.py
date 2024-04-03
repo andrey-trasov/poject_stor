@@ -14,6 +14,7 @@ class Product(Commodity, ReprMixin):
         self.name = name                              #название
         self.description = description                #описание
         self.__price = float(price)                   #цена
+        self.check_quantity(quantity)
         self.quantity = quantity                      #количество в наличии
         super().__repr__()
 
@@ -49,3 +50,7 @@ class Product(Commodity, ReprMixin):
         if isinstance(other, self.__class__):
             return self.__price * self.quantity + other.__price * other.quantity
         raise TypeError
+
+    def check_quantity(self, quantity):
+        if quantity < 1:
+            raise ValueError ("Товар с нулевым количеством не может быть добавлен")
